@@ -1,0 +1,10 @@
+# [Choice] Node.js version: 18, 16
+ARG VARIANT="18"
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
+
+# [Optional] Install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+# Install Yeoman, Gulp, and SPFx Generator
+RUN npm install -g yo gulp @microsoft/generator-sharepoint

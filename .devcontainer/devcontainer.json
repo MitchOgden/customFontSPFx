@@ -1,0 +1,28 @@
+{
+  "name": "SPFx Development Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
+  "postCreateCommand": "npm install -g yo gulp @microsoft/generator-sharepoint && npm install",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-vscode.vscode-node-azure-pack",
+    "esbenp.prettier-vscode"
+  ],
+  "forwardPorts": [5432, 3000, 35729],
+  "portsAttributes": {
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "Local Server",
+      "onAutoForward": "openBrowser"
+    },
+    "35729": {
+      "label": "Live Reload",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "remoteUser": "vscode"
+}
